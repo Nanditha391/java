@@ -1,24 +1,21 @@
-name: Java Project
-
+name: Java application
 on:
   push:
-    branches:
-      - master
+    branches: [ "master" ]
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
-      - name: Cloning the github Repository
-        uses: actions/checkout@v4
+      - name: cloning github repository
+        uses: actions/checkout@v7.0.0
 
-      - name: compile the java source code
+      - name: compile java project
         shell: cmd
         run: javac Test.java
 
-      - name: executing java project
+      - name: execute java project
         shell: cmd
         run: java Test
         
