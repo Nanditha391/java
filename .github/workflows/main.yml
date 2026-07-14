@@ -1,0 +1,28 @@
+name: Java Project
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Cloning the github Repository
+        uses: actions/checkout@v4
+
+      - name: compile the java source code
+        shell: cmd
+        run: javac Test.java
+
+      - name: executing java project
+        shell: cmd
+        run: java Test
+        
+
+      
+
+     
